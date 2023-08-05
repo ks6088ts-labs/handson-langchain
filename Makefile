@@ -32,4 +32,5 @@ ci-test: install-deps-dev lint test ## ci test
 
 .PHONY: run
 run: ## run server
-	poetry run uvicorn api.main:app --port 8888 --reload
+	REVISION=$(GIT_REVISION) VERSION=$(GIT_TAG) \
+		poetry run uvicorn api.main:app --port 8888 --reload
