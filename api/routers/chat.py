@@ -7,6 +7,7 @@ from langchain.chat_models import ChatOpenAI
 
 from api.schemas import chat as chat_schemas
 from api.settings import chat as chat_settings
+from api.tools import get_current_weather
 
 settings = chat_settings.ChatSettings()
 router = APIRouter()
@@ -30,6 +31,7 @@ def create_agent():
             func=LLMMathChain.from_llm(llm=llm, verbose=True).run,
             description="数理計算の結果を返します",
         ),
+        get_current_weather.GetCurrentWeatherTool(),
     ]
 
     return initialize_agent(
