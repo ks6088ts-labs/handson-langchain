@@ -1,8 +1,9 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import BaseSettings
 
 
 class InformationSettings(BaseSettings):
     version: str = "0.0.0"
     revision: str = "fffffff"
 
-    model_config = SettingsConfigDict(env_file="information.env")
+    class Config:
+        env_file = "information.env"

@@ -17,6 +17,10 @@ format: ## format codes
 	poetry run isort $(SOURCE_FILES)
 	poetry run black $(SOURCE_FILES)
 
+.PHONY: fix
+fix: ## fix codes
+	poetry run ruff $(SOURCE_FILES) --fix
+
 .PHONY: lint
 lint: ## lint
 	poetry run isort --check-only $(SOURCE_FILES)
