@@ -12,6 +12,10 @@ help:
 install-deps-dev: ## install dependencies for development
 	poetry install
 
+.PHONY: install-deps-ci
+install-deps-ci: ## install dependencies for CI
+	poetry install --without playground
+
 .PHONY: format
 format: ## format codes
 	poetry run isort $(SOURCE_FILES)
@@ -32,9 +36,13 @@ test: ## run tests
 	poetry run pytest
 
 .PHONY: ci-test
-ci-test: install-deps-dev lint test ## ci test
+ci-test: install-deps-ci lint test ## ci test
 
 .PHONY: run
 run: ## run server
 	REVISION=$(GIT_REVISION) VERSION=$(GIT_TAG) \
 		poetry run uvicorn api.main:app --port 8888 --reload
+
+.PHONY: jupyterlab
+jupyterlab: ## run jupyterlab server
+	poetry run jupyter lab --port 8889
