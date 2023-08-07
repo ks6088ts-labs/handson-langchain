@@ -40,7 +40,7 @@ def create_agent():
 
 
 @router.post("/chat", response_model=chat_schemas.ChatResponse)
-async def create_task(body: chat_schemas.ChatRequest):
+async def chat(body: chat_schemas.ChatRequest):
     agent = create_agent()
     response = agent.run(body.message)
     return chat_schemas.ChatResponse(

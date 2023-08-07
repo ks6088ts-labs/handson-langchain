@@ -2,8 +2,8 @@ from pydantic import BaseSettings
 
 
 class InformationSettings(BaseSettings):
-    version: str = "0.0.0"
-    revision: str = "fffffff"
+    version = "0.0.0"
+    revision = "fffffff"
 
     class Config:
         env_file = "information.env"
