@@ -1,4 +1,5 @@
 [![test](https://github.com/ks6088ts-labs/handson-langchain/workflows/test/badge.svg)](https://github.com/ks6088ts-labs/handson-langchain/actions/workflows/test.yml)
+[![release](https://github.com/ks6088ts-labs/handson-langchain/workflows/release/badge.svg)](https://github.com/ks6088ts-labs/handson-langchain/actions/workflows/release.yml)
 
 # handson-langchain
 Hands on langchain
@@ -20,16 +21,16 @@ Put following files in the project root directory.
 openai_model_name = "gpt-35-turbo"
 openai_deployment_id = "chat"
 openai_api_type = "azure"
-openai_api_key: str
+openai_api_key = "your-api-key"
 openai_api_base = "https://AOAI_NAME.openai.azure.com/"
 openai_api_version = "2023-07-01-preview"
 ```
 
 **azure_cognitive_search.env**
 ```
-service_name: str
-index_name: str
-api_key: str
+service_name = "your-service-name"
+index_name = "your-index-name"
+api_key = "your-api-key"
 ```
 
 ### Run server
@@ -44,6 +45,13 @@ make install-deps-dev
 
 ```shell
 make run
+```
+
+**Run docker container**
+
+```shell
+# See Makefile to set environment variables via `--env` option
+make docker-run
 ```
 
 ### Development
