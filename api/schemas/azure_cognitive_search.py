@@ -1,3 +1,5 @@
+from typing import List
+
 from pydantic import BaseModel, Field
 
 
@@ -6,11 +8,24 @@ class SearchBase(BaseModel):
 
 
 class SearchRequest(SearchBase):
-    pass
+    n_results: int = Field(3, description="検索結果の数", example=3)
+
+
+class Document(BaseModel):
+    class Metadatas(BaseModel):
+        source: str
+        title: str
+        score: float
+
+        class Config:
+            extra = "allow"
+
+    text: str
+    metadatas: Metadatas
 
 
 class SearchResponse(SearchBase):
     id: str = Field(
         ..., description="トランザクション ID", example="00000000-0000-0000-0000-000000000000"
     )
-    result: str = Field(..., description="検索結果", example="検索結果")
+    documents: List[Document]
