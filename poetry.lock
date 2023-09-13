@@ -329,6 +329,21 @@ typing-extensions = ">=4.6.0"
 aio = ["aiohttp (>=3.0)"]
 
 [[package]]
+name = "azure-cosmos"
+version = "4.5.0"
+description = "Microsoft Azure Cosmos Client Library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "azure-cosmos-4.5.0.zip", hash = "sha256:621af88e16de1464e7ced27e9a719da93c2226863efd839bc5b33c3df9cb3118"},
+    {file = "azure_cosmos-4.5.0-py3-none-any.whl", hash = "sha256:c7c6633f047f36fd490dbf1e106bf9d762bfdcf3c9b6206dd8efe5d9e2f2980a"},
+]
+
+[package.dependencies]
+azure-core = ">=1.23.0,<2.0.0"
+
+[[package]]
 name = "azure-identity"
 version = "1.14.0"
 description = "Microsoft Azure Identity Library for Python"
@@ -4233,4 +4248,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a21f34254f9a4350e58870848684d7be49cde1de470c7bb2ec91c608989afeea"
+content-hash = "9a52fd1cc517987c0fd6ded1c883c28318baa94166b879cbec2626ff1a26f306"

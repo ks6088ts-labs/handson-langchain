@@ -16,6 +16,7 @@ chromadb = "^0.4.8"
 tiktoken = "^0.4.0"
 azure-search-documents = "11.4.0b8"
 azure-identity = "^1.14.0"
+azure-cosmos = "^4.5.0"
 
 
 [tool.poetry.group.dev.dependencies]
