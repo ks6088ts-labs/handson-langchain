@@ -362,6 +362,24 @@ msal = ">=1.20.0,<2.0.0"
 msal-extensions = ">=0.3.0,<2.0.0"
 
 [[package]]
+name = "azure-keyvault-secrets"
+version = "4.7.0"
+description = "Microsoft Azure Key Vault Secrets Client Library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "azure-keyvault-secrets-4.7.0.zip", hash = "sha256:77ee2534ba651a1f306c85d7b505bc3ccee8fea77450ebafafc26aec16e5445d"},
+    {file = "azure_keyvault_secrets-4.7.0-py3-none-any.whl", hash = "sha256:a16c7e6dfa9cba68892bb6fcb905bf2e2ec1f2a6dc05522b61df79621e050901"},
+]
+
+[package.dependencies]
+azure-common = ">=1.1,<2.0"
+azure-core = ">=1.24.0,<2.0.0"
+isodate = ">=0.6.1"
+typing-extensions = ">=4.0.1"
+
+[[package]]
 name = "azure-search-documents"
 version = "11.4.0b8"
 description = "Microsoft Azure Cognitive Search Client Library for Python"
@@ -4248,4 +4266,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "9a52fd1cc517987c0fd6ded1c883c28318baa94166b879cbec2626ff1a26f306"
+content-hash = "8426cc5d57f16e0b17127fee4d9d848382b359d7e95ee36c9551a703928844d7"
