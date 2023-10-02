@@ -2878,6 +2878,25 @@ docs = ["sphinx (>=4.5.0,<5.0.0)", "sphinx-rtd-theme", "zope.interface"]
 tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
 
 [[package]]
+name = "pypdf"
+version = "3.16.2"
+description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "pypdf-3.16.2-py3-none-any.whl", hash = "sha256:d132953be1e2af7b115fbfd445459fdfc601a845ca12379160e1b6afaa1fef2c"},
+    {file = "pypdf-3.16.2.tar.gz", hash = "sha256:6e000281fd0f4cd32e6f1e75b05af0b6c0fbbd9777fa9a8e9d86e34cda65419d"},
+]
+
+[package.extras]
+crypto = ["PyCryptodome", "cryptography"]
+dev = ["black", "flit", "pip-tools", "pre-commit (<2.18.0)", "pytest-cov", "pytest-socket", "pytest-timeout", "wheel"]
+docs = ["myst_parser", "sphinx", "sphinx_rtd_theme"]
+full = ["Pillow (>=8.0.0)", "PyCryptodome", "cryptography"]
+image = ["Pillow (>=8.0.0)"]
+
+[[package]]
 name = "pypika"
 version = "0.48.9"
 description = "A SQL query builder API for Python"
@@ -4283,4 +4302,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "54b921b539f6c509969ed980394140a019caa946b9f718e28f3daecaa3645a3f"
+content-hash = "81a70515f8fbf13988f9474489da7a88f6d40e7126ea84f6c1e3a5f9913e6362"
