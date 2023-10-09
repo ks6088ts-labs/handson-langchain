@@ -19,6 +19,7 @@ azure-identity = "^1.14.0"
 azure-cosmos = "^4.5.0"
 azure-keyvault-secrets = "^4.7.0"
 pypdf = "^3.16.2"
+langchainhub = "^0.1.13"
 
 
 [tool.poetry.group.dev.dependencies]
