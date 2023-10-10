@@ -20,6 +20,7 @@ azure-cosmos = "^4.5.0"
 azure-keyvault-secrets = "^4.7.0"
 pypdf = "^3.16.2"
 langchainhub = "^0.1.13"
+transformers = "^4.34.0"
 
 
 [tool.poetry.group.dev.dependencies]
