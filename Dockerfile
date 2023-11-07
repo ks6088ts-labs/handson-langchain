@@ -9,6 +9,6 @@ COPY ./ ./
 RUN pip install poetry
 
 RUN poetry config virtualenvs.create false \
-    && poetry install --without dev,playground
+    && poetry install --without dev,lint,typing,test
 
 CMD [ "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8888" ]
