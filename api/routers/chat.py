@@ -1,8 +1,8 @@
 import uuid
 
 from fastapi import APIRouter
-from langchain import LLMMathChain
 from langchain.agents import AgentType, Tool, initialize_agent
+from langchain.chains import LLMMathChain
 from langchain.chat_models import ChatOpenAI
 
 from api.schemas import chat as chat_schemas
