@@ -20,7 +20,7 @@ install-deps-dev: ## install dependencies for development
 
 .PHONY: install-deps-ci
 install-deps-ci: ## install dependencies for CI
-	poetry install --without playground
+	poetry install --with lint,test
 
 .PHONY: format
 format: ## format codes

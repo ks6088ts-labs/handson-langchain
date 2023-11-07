@@ -10,8 +10,8 @@ readme = "README.md"
 python = ">=3.9,<3.12"
 fastapi = "^0.99.0"
 uvicorn = {extras = ["standard"], version = "^0.23.2"}
-openai = "^0.27.8"
-langchain = "^0.0.305"
+openai = "0.28.1"
+langchain = "^0.0.331"
 chromadb = "^0.4.8"
 tiktoken = "^0.4.0"
 azure-search-documents = "11.4.0b8"
@@ -24,20 +24,28 @@ transformers = "^4.34.0"
 tensorflow = "^2.14.0"
 huggingface-hub = "^0.17.3"
 datasets = "^2.14.5"
+numexpr = "^2.8.7"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
-mypy = "^1.4.1"
-ruff = "^0.0.282"
-black = "^23.7.0"
-isort = "^5.12.0"
-pytest-asyncio = "^0.21.1"
-httpx = "^0.24.1"
-
-
-[tool.poetry.group.playground.dependencies]
 jupyterlab = "^4.0.4"
+python-dotenv = "^1.0.0"
+
+
+[tool.poetry.group.lint.dependencies]
+ruff = "^0.1.4"
+black = "^23.10.1"
+isort = "^5.12.0"
+
+
+[tool.poetry.group.typing.dependencies]
+mypy = "^1.6.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+httpx = "^0.25.1"
 
 [build-system]
 requires = ["poetry-core"]
@@ -59,11 +67,8 @@ check_untyped_defs = true
 [tool.ruff]
 select = [
     "E",  # pycodestyle errors
-    "W",  # pycodestyle warnings
     "F",  # pyflakes
     "I",  # isort
-    "C",  # flake8-comprehensions
-    "B",  # flake8-bugbear
 ]
 ignore = [
     "E501",  # line too long, handled by black
