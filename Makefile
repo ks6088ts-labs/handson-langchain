@@ -10,6 +10,11 @@ DOCKER_IMAGE_NAME ?= handson-langchain
 DOCKER_PLATFORM ?= linux/amd64
 DOCKER_TAG_NAME ?= $(DOCKERHUB_USERNAME)/$(DOCKER_IMAGE_NAME):$(GIT_TAG)
 
+LANGCHAIN_TRACING_V2 ?= "true"
+LANGCHAIN_ENDPOINT ?= "https://api.smith.langchain.com"
+LANGCHAIN_API_KEY ?= "ls__yourapikey"
+LANGCHAIN_PROJECT ?= "default"
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -48,6 +53,7 @@ ci-test: install-deps-ci lint test ## ci test
 .PHONY: run
 run: ## run server
 	REVISION=$(GIT_REVISION) VERSION=$(GIT_TAG) DEBUG=$(DEBUG) \
+	LANGCHAIN_TRACING_V2=$(LANGCHAIN_TRACING_V2) LANGCHAIN_ENDPOINT=$(LANGCHAIN_ENDPOINT) LANGCHAIN_API_KEY=$(LANGCHAIN_API_KEY) LANGCHAIN_PROJECT=$(LANGCHAIN_PROJECT) \
 		poetry run uvicorn api.main:app --host 0.0.0.0 --port 8888 --reload
 
 .PHONY: jupyterlab
