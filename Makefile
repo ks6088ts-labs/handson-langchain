@@ -2,6 +2,7 @@ SOURCE_FILES ?= $(shell find . -type d \( -name dist -o -name .venv \) -prune -o
 
 GIT_REVISION ?= $(shell git rev-parse --short HEAD)
 GIT_TAG ?= $(shell git describe --tags --abbrev=0 | sed -e s/v//g)
+DEBUG ?= False
 
 DOCKERHUB_USERNAME ?= ks6088ts
 DOCKER ?= docker
@@ -46,7 +47,7 @@ ci-test: install-deps-ci lint test ## ci test
 
 .PHONY: run
 run: ## run server
-	REVISION=$(GIT_REVISION) VERSION=$(GIT_TAG) \
+	REVISION=$(GIT_REVISION) VERSION=$(GIT_TAG) DEBUG=$(DEBUG) \
 		poetry run uvicorn api.main:app --host 0.0.0.0 --port 8888 --reload
 
 .PHONY: jupyterlab
