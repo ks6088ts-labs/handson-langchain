@@ -33,6 +33,7 @@ azure-storage-blob = "^12.19.0"
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^4.0.4"
 python-dotenv = "^1.0.0"
+unstructured = "^0.10.30"
 
 
 [tool.poetry.group.lint.dependencies]
