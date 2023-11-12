@@ -27,6 +27,7 @@ numexpr = "^2.8.7"
 langchain = "^0.0.333"
 langserve = {extras = ["all"], version = "^0.0.25"}
 faiss-cpu = "^1.7.4"
+azure-storage-blob = "^12.19.0"
 
 
 [tool.poetry.group.dev.dependencies]
